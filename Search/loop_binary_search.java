@@ -5,6 +5,7 @@ public class Main {
         int target = 10;
         int result = binarySearch(array, target);
 
+        System.out.println("--재귀적 호출을 통한 이진 탐색--\n");
         if (result == -1) {
             System.out.println("배열에 "+target+"이 없습니다.");
         } else {
