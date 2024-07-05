@@ -17,7 +17,7 @@ public class Main {
         g.addEdge(3, 4);
         g.addEdge(4, 6);
 
-        System.out.println("BFS 0부터 시작(작은 숫자 우선 순위");
+        System.out.println("BFS 0부터 시작(작은 숫자 우선 순위)");
         g.BFS(0);
     }
 }
@@ -26,7 +26,6 @@ class Graph {
     private int V;
     private LinkedList<Integer> adj[];
 
-    // Constructor
     Graph(int v) {
         V = v;
         adj = new LinkedList[v];
@@ -34,13 +33,11 @@ class Graph {
             adj[i] = new LinkedList();
     }
 
-    // Function to add an edge into the graph
     public void addEdge(int v, int w) {
         adj[v].add(w);
-        adj[w].add(v); // Since the graph is undirected
+        adj[w].add(v);
     }
 
-    // Function to perform BFS
     public void BFS(int s) {
         boolean visited[] = new boolean[V];
         Queue<Integer> queue = new LinkedList<>();
