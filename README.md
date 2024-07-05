@@ -7,3 +7,9 @@
   * dlcodns(https://github.com/dlcodns)
   * inno6734@gmail.com
   * Bakhyoungwoo(https://github.com/Bakhyoungwoo)
+
+### 진행 방식
+> 6월 28일 ~ 7월 23일 동안 알고리즘 공부
+> 7월 26일 ~ 8월 30일 동안 백준 SW코테 공부
+>
+> 활동 사항은 이슈에 적어나갈 예정
