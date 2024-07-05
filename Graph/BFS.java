@@ -17,7 +17,7 @@ public class Main {
         g.addEdge(3, 4);
         g.addEdge(4, 6);
 
-        System.out.println("BFS 0부터 시작(작은 숫자 우선 순위");
+        System.out.println("BFS 0부터 시작(작은 숫자 우선 순위)");
         g.BFS(0);
     }
 }
