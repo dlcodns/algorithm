@@ -15,15 +15,15 @@ public class Main {
 
     public static int binarySearch(int[] array, int target) {
         int left = 0;
-        int right = array.length - 1;
+        int right = array.length - 1;  //배열 마지막 인덱스
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
+        while (left <= right) {  //검색 다 할 때까지
+            int mid = left + (right - left) / 2;  //중간 인덱스 값
 
-            if (array[mid] == target) {
+            if (array[mid] == target) {  //만약 중앙이 타겟이면 바로 반환
                 return mid;
             }
-            if (array[mid] < target) {
+            if (array[mid] < target) {  //만약 아니면 수 1씩 바꾸면서 계속 돌기
                 left = mid + 1;
             } else {
                 right = mid - 1;

@@ -25,29 +25,29 @@ class Graph {
     private int V;
     private LinkedList<Integer> adj[];
 
-    Graph(int v) {
+    Graph(int v) {  //노드 v개(7개) 만들기
         V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i)
             adj[i] = new LinkedList<>();
     }
 
-    public void addEdge(int v, int w) {
+    public void addEdge(int v, int w) {  //양방향으로 연결짓기
         adj[v].add(w);
         adj[w].add(v);
     }
 
-    public void DFS(int s) {
+    public void DFS(int s) {  //s = 시작 지점
         boolean visited[] = new boolean[V];
         DFSUtil(s, visited);
     }
 
     private void DFSUtil(int s, boolean visited[]) {
-        visited[s] = true;
+        visited[s] = true;  //시작 지점 방문
         System.out.print(s + " ");
 
-        for (int n : adj[s]) {
-            if (!visited[n]) {
+        for (int n : adj[s]) {  //adj[s]에 있는 인접한 노드를 반복
+            if (!visited[n]) {  //방문 안 했을 때 s를 n으로 두고 재귀 호출
                 DFSUtil(n, visited);
             }
         }
