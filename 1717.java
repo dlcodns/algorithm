@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 
 public class Main {
     static int[] arr;
+    //트리 높이
     static int[] rank;
 
     public static void main(String[] args) throws IOException {
@@ -17,13 +18,13 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-       arr = new int[n+1];
-       rank = new int[n+1];
+        arr = new int[n+1];
+        rank = new int[n+1];
 
-       for (int i=0;i<=n;i++){
-           arr[i] = i;
-           rank[i] = 0;
-       }
+        for (int i=0;i<=n;i++){
+            arr[i] = i;
+            rank[i] = 0;
+        }
 
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
@@ -63,6 +64,7 @@ public class Main {
     }
 
     public static void union(int x, int y){
+        //x, y가 다를 때
         if (x != y){
             if (rank[x] > rank[y]){
                 arr[y] = x;
