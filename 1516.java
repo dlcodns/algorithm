@@ -10,9 +10,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        //최종 시간
         ArrayList<Integer> ans = new ArrayList<>();
         ArrayList<ArrayList<Integer>> prerequisites = new ArrayList<>();
-        int n = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine()); //case 수
 
         for (int i = 0; i <= n; i++) {
             prerequisites.add(new ArrayList<>());
@@ -21,7 +22,7 @@ public class Main {
 
         for (int i = 1; i <= n; i++) {
             String[] input = br.readLine().split(" ");
-
+            //첫번째 수 건설 시간을 ans에 다 넣기
             int buildTime = Integer.parseInt(input[0]);
             if (i < ans.size()) {
                 ans.set(i, buildTime);
@@ -29,12 +30,15 @@ public class Main {
                 ans.add(buildTime);
             }
 
+            //두 번째~ 마지막 전 수: 지어놔야 할 건물 저장
             for (int j = 1; j < input.length - 1; j++) {
                 int prereq = Integer.parseInt(input[j]);
                 prerequisites.get(i).add(prereq);
             }
         }
-        
+
+        //지어야 할 건물 중 최대 시간 찾고 더하기
+        //여러 개일 경우 가장 오래 걸리는 건물이 완성 돼야 다음 건물
         for (int i = 1; i <= n; i++) {
             int maxPrereqTime = 0;
             for (int prereq : prerequisites.get(i)) {
