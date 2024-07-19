@@ -14,6 +14,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter out = new PrintWriter(System.out);
 
+        //입력받기 n+1개의 집합, 다음 입력 개
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
@@ -22,11 +23,12 @@ public class Main {
         rank = new int[n+1];
 
         for (int i=0;i<=n;i++){
-            arr[i] = i;
-            rank[i] = 0;
+            arr[i] = i;  //0에 0, 1에 1 넣기
+            rank[i] = 0;  //트리 높이 0
         }
 
         for (int i = 0; i < m; i++) {
+            //입력받기 합or 포함, a가 포함된 집합, b가 포함된 집합
             st = new StringTokenizer(br.readLine());
             int s = Integer.parseInt(st.nextToken());
             int a = Integer.parseInt(st.nextToken());
@@ -64,8 +66,10 @@ public class Main {
     }
 
     public static void union(int x, int y){
-        //x, y가 다를 때
+        //x, y가 다를 때, 같으면 같은 집합이라서
         if (x != y){
+            //트리 높이가 더 큰 루트에 다른 루트를 설정하는 방식
+            //트리 최대 높이를 줄여서 시간 복잡도를 줄이는 방식.....
             if (rank[x] > rank[y]){
                 arr[y] = x;
             }
